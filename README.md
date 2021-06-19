@@ -22,4 +22,7 @@
 
 # 操作範例
 1. `python web.py`
-2. 從瀏覽器連接 `http://localhost:9999/`，畫面如下![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/init_screen.png)
+2. 從瀏覽器連接 `http://localhost:9999/`，畫面如下，預設代碼為2330，使用者可根據需求輸入個股代碼
+![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/init_screen.png)
+3. 從`個股資訊`選單中選出欲呈現之圖表，下方會跳出目前預設的欄位，但因每間公司的報表科目不盡相同，請至goodinfo或是台灣公開資訊觀測站查閱正確的科目名稱，在此我們先以預設的欄位，並點擊`取得專注本業作圖`按鈕
+![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/example_%E5%B0%88%E6%B3%A8%E6%9C%AC%E6%A5%AD_1.png)
