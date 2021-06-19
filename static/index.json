@@ -1,0 +1,108 @@
+{
+  "EPS": {
+    "index": "EPS",
+    "sheet_name": "損益表",
+    "time_scale": "IS_M_YEAR",
+    "interested_item": [
+      "每股稅後盈餘(元)"
+    ],
+    "data_present_type": "絕對值",
+    "fig_args": {
+      "title": "每股稅後盈餘",
+      "x_axis_name": "年度",
+      "y_axis_name": "元",
+      "mode": "bar",
+      "file_name": "{}_eps.html"
+    }
+  },
+  "單季營收": {
+    "index": "單季營收",
+    "sheet_name": "損益表",
+    "time_scale": "IS_M_QUAR",
+    "interested_item": [
+      "營業收入"
+    ],
+    "data_present_type": "絕對值",
+    "fig_args": {
+      "title": "單季營收",
+      "x_axis_name": "單季",
+      "y_axis_name": "億元",
+      "mode": "bar",
+      "file_name": "{}_單季營收.html"
+    }
+  },
+  "單季營收年成長率": {
+    "index": "單季營收年成長率",
+    "sheet_name": "財務比率表",
+    "time_scale": "XX_M_QUAR",
+    "interested_item": [
+      "營收年成長率"
+    ],
+    "data_present_type": "",
+    "fig_args": {
+      "title": "單季營收年成長率",
+      "x_axis_name": "單季",
+      "y_axis_name": "",
+      "mode": "line",
+      "file_name": "{}_單季營收年成長率.html"
+    }
+  },
+  "財務狀況": {
+    "index": "財務狀況",
+    "sheet_name": "資產負債表",
+    "time_scale": "BS_M_YEAR",
+    "interested_item": [
+      "流動資產合計",
+      "流動負債合計"
+    ],
+    "data_present_type": "絕對值",
+    "fig_args": {
+      "title": "財務狀況",
+      "x_axis_name": "年度",
+      "y_axis_name": "億元",
+      "mode": "bar",
+      "file_name": "{}_財務狀況.html"
+    }
+  },
+  "三率": {
+    "index": "三率",
+    "sheet_name": "財務比率表",
+    "time_scale": "XX_M_YEAR",
+    "interested_item": [
+      "營業毛利率",
+      "營業利益率",
+      "稅後淨利率",
+      "營業費用率"
+    ],
+    "data_present_type": "",
+    "fig_args": {
+      "title": "三率",
+      "x_axis_name": "年度",
+      "y_axis_name": "",
+      "mode": "line",
+      "file_name": "{}_三率.html"
+    }
+  },
+  "專注本業": {
+    "index": "專注本業",
+    "sheet_name": "資產負債表",
+    "time_scale": "BS_M_YEAR",
+    "interested_item": [
+      "現金及約當現金",
+      "應收票據",
+      "應收帳款",
+      "存貨",
+      "預付款項–流動資產",
+      "不動產、廠房及設備",
+      "使用權資產"
+    ],
+    "data_present_type": "絕對值",
+    "fig_args": {
+      "title": "專注本業",
+      "x_axis_name": "年度",
+      "y_axis_name": "億元",
+      "mode": "bar",
+      "file_name": "{}_專注本業.html"
+    }
+  }
+}

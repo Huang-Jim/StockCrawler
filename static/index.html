@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"><title>股市作圖</title>
+</head>
+
+<body>
+
+	<fieldset>
+		<label>請選擇爬蟲方式:</label>
+		<br><label><input type="radio" name="scrape_method" value="selenium" checked>透過自動點擊程式模擬實際點選情形</label>
+<!--		<br><label><input type="radio" name="scrape_method" value="ajaxrequest">透過發送請求方式獲取回應</label>-->
+
+		<br><label>股市代碼:</label>
+		<input type="text" id="stock_id" name="stock_id" value="2330"><br><br>
+
+		<br><label>個股資訊:</label><br>
+			<select id="select" size="6">
+			  <option value="0">EPS</option>
+			  <option value="1">單季營收</option>
+			  <option value="2">單季營收年成長率</option>
+			  <option value="3">財務狀況</option>
+			  <option value="4">三率</option>
+			  <option value="5">專注本業</option>
+			</select>
+		<div id="selected_result"></div>
+		<div id="interested_items_col_div"></div>
+
+		<div id="add_col_button">
+		</div>
+		<div id="submit_button">
+		</div>
+		<div id="error_display">
+		</div>
+	</fieldset>
+
+
+	<script src='./static/script.js'></script>
+
+</body>
+
+</html>
