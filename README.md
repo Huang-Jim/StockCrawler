@@ -6,9 +6,9 @@
   + 欲更動程式碼的使用者則可透過`web_function.py`的`run_all`function研究即可
 
 # Notices
-1. 本專案為作者練習爬蟲、作圖以及簡易web為目的，不會頻繁針對此專案做更新，未來可能會補充的內容在[]
-2. 
+1. 本專案為作者練習爬蟲、作圖以及簡易web為目的，不會頻繁針對此專案做更新，未來可能會補充的內容在ToDoList[https://github.com/Huang-Jim/StockCrawler/blob/main/README.md#to-do-list]
 3. 作者與goodinfo內部人員完全無關連，請使用者做有良心的爬蟲人，請勿在短時間內發送大量封包造成goodinfo的負擔，並點擊廣告回饋goodinfo的工程師們
+4. goodinfo網頁有時會做更改，只要前端的element做變動，便可能會使爬蟲失效，請斟酌使用
 
 # requirements
 + `plotly` -> 作圖使用
