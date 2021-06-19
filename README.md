@@ -9,6 +9,8 @@
 1. 本專案為作者練習爬蟲、作圖以及簡易web為目的，不會頻繁針對此專案做更新，未來可能會補充的內容在[ToDoList](https://github.com/Huang-Jim/StockCrawler/blob/main/README.md#to-do-list)
 3. 作者與goodinfo內部人員完全無關連，請使用者做有良心的爬蟲人，請勿在短時間內發送大量封包造成goodinfo的負擔，並點擊廣告回饋goodinfo的工程師們
 4. goodinfo網頁有時會做更改，只要前端的element做變動，便可能會使爬蟲失效，請斟酌使用
+5. 目前作圖皆以合併報表呈現，而非個體報表
+6. goodinfo提供之報表為簡易報表，因此作圖結果不提供任何專業投資資訊，請自負投資風險
 
 # requirements
 + `plotly` -> 作圖使用
@@ -43,3 +45,6 @@
 ![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/example_%E5%B0%88%E6%B3%A8%E6%9C%AC%E6%A5%AD_4.png)
 
 # To Do List
+- [ ] 多圖組合成一張圖
+- [ ] 設計介面可讓使用者從0開始依照自己想要的科目製表
+- [ ] 增加更多預設的作圖資訊
