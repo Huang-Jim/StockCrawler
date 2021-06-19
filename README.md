@@ -1,5 +1,14 @@
 # StockCrawler
-從[台灣股市資訊網](https://goodinfo.tw/StockInfo/index.asp)爬資料，並依照需求作圖
+1. 從[台灣股市資訊網](https://goodinfo.tw/StockInfo/index.asp)爬資料
+2. 請使用者依照使用情境來操作:
+  + 以html做簡易的使用者介面，不想更動程式碼的使用者可以完全透過網頁操作即可取得作圖
+  + 欲針對報表資訊做更改的使用者可以讀取報表的pkl檔案做後續分析
+  + 欲更動程式碼的使用者則可透過`web_function.py`的`run_all`function研究即可
+
+# Notices
+1. 本專案為作者練習爬蟲、作圖以及簡易web為目的，不會頻繁針對此專案做更新，未來可能會補充的內容在[]
+2. 
+3. 作者與goodinfo內部人員完全無關連，請使用者做有良心的爬蟲人，請勿在短時間內發送大量封包造成goodinfo的負擔，並點擊廣告回饋goodinfo的工程師們
 
 # requirements
 + `plotly` -> 作圖使用
@@ -32,3 +41,5 @@
 ![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/example_%E5%B0%88%E6%B3%A8%E6%9C%AC%E6%A5%AD_3.png)
 6. 成功後系統會跳出以`plotly`繪製的html圖表，使用者可依需求做調整並儲存
 ![操作者介面](https://github.com/Huang-Jim/StockCrawler/blob/main/fid_source/example_%E5%B0%88%E6%B3%A8%E6%9C%AC%E6%A5%AD_4.png)
+
+# To Do List
