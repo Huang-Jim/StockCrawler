@@ -22,4 +22,4 @@
 
 # 操作範例
 1. `python web.py`
-2. 從瀏覽器連接 `http://localhost:9999/`，畫面如下![操作者介面](./fig_source/init_screen.png)
+2. 從瀏覽器連接 `http://localhost:9999/`，畫面如下![操作者介面](/fig_source/init_screen.png)
