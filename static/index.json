@@ -12,7 +12,7 @@
       "x_axis_name": "年度",
       "y_axis_name": "元",
       "mode": "bar",
-      "file_name": "{}_eps.html"
+      "file_name": "./plot/{}_eps.html"
     }
   },
   "單季營收": {
@@ -28,7 +28,7 @@
       "x_axis_name": "單季",
       "y_axis_name": "億元",
       "mode": "bar",
-      "file_name": "{}_單季營收.html"
+      "file_name": "./plot/{}_單季營收.html"
     }
   },
   "單季營收年成長率": {
@@ -44,7 +44,7 @@
       "x_axis_name": "單季",
       "y_axis_name": "",
       "mode": "line",
-      "file_name": "{}_單季營收年成長率.html"
+      "file_name": "./plot/{}_單季營收年成長率.html"
     }
   },
   "財務狀況": {
@@ -61,7 +61,7 @@
       "x_axis_name": "年度",
       "y_axis_name": "億元",
       "mode": "bar",
-      "file_name": "{}_財務狀況.html"
+      "file_name": "./plot/{}_財務狀況.html"
     }
   },
   "三率": {
@@ -80,7 +80,7 @@
       "x_axis_name": "年度",
       "y_axis_name": "",
       "mode": "line",
-      "file_name": "{}_三率.html"
+      "file_name": "./plot/{}_三率.html"
     }
   },
   "專注本業": {
@@ -102,7 +102,7 @@
       "x_axis_name": "年度",
       "y_axis_name": "億元",
       "mode": "bar",
-      "file_name": "{}_專注本業.html"
+      "file_name": "./plot/{}_專注本業.html"
     }
   }
 }

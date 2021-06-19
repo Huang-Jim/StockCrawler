@@ -16,6 +16,8 @@ with open(yaml_path, 'r', encoding='utf-8') as f:
 logger = logging.getLogger()
 static_dir = './static'
 
+create_dir('./plot')
+
 
 @post('/search')
 def search():

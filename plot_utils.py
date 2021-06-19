@@ -138,7 +138,7 @@ class Ploter:
                               xaxis_title=plot_index.fig_args["x_axis_name"],
                               yaxis_title=plot_index.fig_args["y_axis_name"],
                               )
-            plot(fig, filename="{}".format(plot_index.fig_args["file_name"]))
+            plot(fig, filename="{}".format(plot_index.fig_args["file_name"].format(self.stock_id)))
 
         elif len(plot_index) == 2:  # 要畫的兩張圖在不同的表
             fig = make_subplots(specs=[[{"secondary_y": True}]])
