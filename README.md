@@ -2,10 +2,13 @@
 從[台灣股市資訊網](https://goodinfo.tw/StockInfo/index.asp)爬資料，並依照需求作圖
 
 # requirements
-1. `plotly` -> 作圖使用
-2. `yaml` -> logger使用
-3. `bottle` -> 僅需載`bottle.py`即可，不須另外install，web service使用
-4. `joblib` -> 儲存及讀取報表資訊
++ `plotly` -> 作圖使用
++ `pyyaml` -> logger使用
++ `bottle` -> 僅需載`bottle.py`即可，不須另外install，web service使用
++ `joblib` -> 儲存及讀取報表資訊
++ `beautifulsoup4` -> 爬蟲
++ `selenium` -> 爬蟲
++ [下載](https://chromedriver.chromium.org/downloads)chrome driver，並放到專案資料夾內，爬蟲時是透過`Selenium`操控
 
 # How to use?
 1. `run web.py`
