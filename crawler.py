@@ -1,16 +1,12 @@
-from datetime import datetime
 import logging
-from typing import List, Dict
+from typing import List
 from time import sleep
-import random
 
 import bs4
 from bs4 import BeautifulSoup
-from fake_useragent import UserAgent
 import joblib
 from selenium import webdriver
 from selenium.webdriver.support.ui import Select
-import requests
 
 from application.structures.sheet_struct import InfoDict
 
@@ -182,112 +178,6 @@ class GoodInfoSeleniumCrawler:
             logger.info("選取時間尺度: {}".format(consolidated_sheet_name_and_time_scale))
             self._select_time_list(time_scale_eng)
             soup = BeautifulSoup(self.browser.page_source, "html.parser")
-            soup.encoding = 'utf-8'
-            logger.info("抓取資料: {}".format(consolidated_sheet_name_and_time_scale))
-            self.th.load_table_info(soup, sheet_name=sheet_name, time_scale=time_scale_eng)
-
-    def dump_sheet_info(self, sheet_name: str, path: str) -> None:
-        """
-        Parameters
-        ----------
-        sheet_name : 報表中文名稱
-        path : 儲存報表pkl檔案的資料夾位置
-        """
-        if sheet_name == "損益表":
-            joblib.dump(self.th.is_info, path)
-        elif sheet_name == "資產負債表":
-            joblib.dump(self.th.bs_info, path)
-        elif sheet_name == "現金流量表":
-            joblib.dump(self.th.cf_info, path)
-        elif sheet_name == "財務比率表":
-            joblib.dump(self.th.xx_info, path)
-        else:
-            raise ValueError('請輸入one of ["資產負債表", "損益表", "現金流量表", "財務比率表"]')
-
-
-class AJAXHeaders:
-    """
-    透過直接發送request的方式抓取goodinfo資訊時所需的header，需與GoodInfoAJAXCrawler配合使用
-    """
-    def __init__(self, stock_id: int, sheet_name: str = "資產負債表"):
-        ajax_headers = {
-            "資產負債表": "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=BS_M_QUAR&STOCK_ID={}".format(stock_id),
-            "損益表": "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=BS_M_QUAR&STOCK_ID={}".format(stock_id),
-            "現金流量表": "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=CF_M_QUAR_ACC&STOCK_ID={}".format(
-                stock_id),
-            "財務比率表": "https://goodinfo.tw/StockInfo/StockFinDetail.asp?RPT_CAT=XX_M_QUAR_ACC&STOCK_ID={}".format(
-                stock_id),
-        }
-        self._user_agent = UserAgent()
-        self._content_type = 'application/x-www-form-urlencoded'
-        self._X_Requested_With = 'XMLHttpRequest'
-        self._origin = 'https://goodinfo.tw'
-        self._referer = ajax_headers[sheet_name]
-        self._accept_language = 'zh-TW,zh;q=0.9'
-        self._accept_encoding = 'gzip,deflate,br'
-        self._sec_ch_ua = '"Not;A Brand";v = "99", "Google Chrome";v = "91", "Chromium";v = "91"'
-        self._sec_ch_ua_mobile = '?0'
-        self._sec_fetch_dest = 'empty'
-        self._sec_fetch_mode = 'cors'
-        self._sec_fetch_site = 'same - origin'
-
-    def get_headers(self) -> Dict[str, str]:
-        """
-        header的getter
-        Returns
-        -------
-        包含header資訊的dict
-        """
-        headers = {'user-agent': self._user_agent.random,
-                   'content-type': self._content_type,
-                   "X-Requested-With": self._X_Requested_With,
-                   'referer': self._referer,
-                   'accept-language': self._accept_language,
-                   'accept-encoding': self._accept_encoding,
-                   'origin': self._origin,
-                   'sec-ch-ua': self._sec_ch_ua,
-                   'sec-ch-ua-mobile': self._sec_ch_ua_mobile,
-                   'sec-fetch-dest': self._sec_fetch_dest,
-                   'sec-fetch-mode': self._sec_fetch_mode,
-                   'sec-fetch-site': self._sec_fetch_site,
-                   }
-        return headers
-
-    headers = property(fget=get_headers)
-
-
-class GoodInfoAJAXCrawler:
-    """
-    透過直接發送request的方式抓取goodinfo資訊，需要與AJAXHeaders配合使用
-    """
-    def __init__(self, stock_id: int):
-        self.stock_id = stock_id
-        self.th = TableHandler()
-        self.url = 'https://goodinfo.tw/StockInfo/StockFinDetail.asp'
-
-    def load_sheet_info(self, sheet_name: str = "資產負債表") -> None:
-        """ 讀取報表資訊
-        Parameters
-        ----------
-        sheet_name : str
-            one of ["資產負債表", "損益表", "現金流量表", "財務比率表"].
-            The default is "資產負債表".
-        """
-        sheet_time = consolidated_time_sacles[sheet_name]
-        logger.info("前往報表: {}".format(sheet_name))
-        for consolidated_sheet_name_and_time_scale, time_scale_eng in sheet_time.items():
-            headers = AJAXHeaders(stock_id=self.stock_id, sheet_name=sheet_name).headers  # 每次隨機更換user-agent
-            print(headers)
-            params = {
-                'STEP': 'DATA',
-                'STOCK_ID': str(self.stock_id),
-                'RPT_CAT': time_scale_eng,
-                'QRY_TIME': str(datetime.now().year),
-            }
-            logger.info("選取時間尺度: {}".format(consolidated_sheet_name_and_time_scale))
-            sleep(random.randint(3, 15))  # 每次隨機更換request間隔
-            response = requests.post(self.url, headers=headers, params=params)
-            soup = BeautifulSoup(response.content, "html.parser")
             soup.encoding = 'utf-8'
             logger.info("抓取資料: {}".format(consolidated_sheet_name_and_time_scale))
             self.th.load_table_info(soup, sheet_name=sheet_name, time_scale=time_scale_eng)
