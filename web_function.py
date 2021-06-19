@@ -14,7 +14,7 @@ logger = logging.getLogger(__name__)
 
 def run_all(stock_id: int,
             select_item: str,
-            int_item_list: List[str]) -> Union[None, Dict[str]]:
+            int_item_list: List[str]) -> Union[None, Dict[str, str]]:
     # 匯入基本資料檔
     general_config = GeneralConfig(stock_id=stock_id, root="./")
 
@@ -47,7 +47,7 @@ def run_all(stock_id: int,
     xx_info = info_dict_processor.postprocess(xx_info)
 
     # 繪圖
-    plot_index_factory = PlotIndexConfigFactory(index_json_path="index.json")
+    plot_index_factory = PlotIndexConfigFactory(index_json_path="./static/index.json")
     ploter = Ploter(bs_info=bs_info, is_info=is_info, cf_info=cf_info, xx_info=xx_info, stock_id=stock_id)
     if_error = ploter.plot([plot_index_factory(select_item)], interested_item=int_item_list)
     return if_error
