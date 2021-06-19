@@ -11,7 +11,7 @@
 + [下載](https://chromedriver.chromium.org/downloads)chrome driver，並放到專案資料夾內，爬蟲時是透過`Selenium`操控
 
 # How to use?
-1. `run web.py`
+1. `python web.py`
 2. 從瀏覽器連接 `http://localhost:9999/`
 3. 輸入個股股市代碼
 4. 選擇想要查看的個股資訊內容
@@ -19,3 +19,7 @@
 6. 點選`取得作圖`按鈕
 7. 等待爬蟲程式獲取網頁資料(一檔股票一天只需等待爬蟲一次後即可產生圖表)
 8. 生成的圖表會以html方式呈現並儲存在資料夾內
+
+# 操作範例
+1. `python web.py`
+2. 從瀏覽器連接 `http://localhost:9999/`，畫面如下![操作者介面](./fig_source/init_screen.png)
